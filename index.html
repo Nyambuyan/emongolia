@@ -6,6 +6,47 @@
     <link rel="stylesheet" href="style.css  " />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>Document</title>
+    <style>
+      /* Modal backdrop */
+      .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 50;
+      }
+  
+      .modal-backdrop.show {
+        display: flex;
+      }
+  
+      /* Modal content (like shadcn) */
+      .modal-content {
+        background: white;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        height: 687px;
+        text-align: center;
+      }
+  
+      .modal-content img {
+        width: 100%;
+        border-radius: 0.5rem;
+      }
+  
+      .close-btn {
+        margin-top: 1rem;
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        
+      }
+    </style>
+  
   </head>
   <body>
     <div class="nav">
@@ -43,7 +84,7 @@
         </svg>
       </div>
     </div>
-    <div class="main">
+    <div class="main" style="display: block;">
       <div class="fixed">
         <div style="display: flex; justify-content: center; align-items: center;">
         <svg
@@ -212,16 +253,49 @@
               src="https://e-mongolia.mn/static/assets/c32382d74edaaf80c15a2a5da4b48383.svg" />
           </div>
         </div>
-        <div
-          style="
-            display: flex;
-            justify-content: center;
-            background-color: transparent;
-          ">
-          <img
-            src="finished.jpg"
-            style="height: 225.5px; width: 360px; border-radius: 10px" />
-        </div>
+         <!-- Your clickable image -->
+         <div
+         style="
+           display: flex;
+           justify-content: center;
+           background-color: transparent;
+           cursor: pointer;
+           position: relative;
+           z-index: 50;
+         "
+         onclick="openModal()"
+       >
+  <img
+    src="finished.jpg"
+    style="height: 225.5px; width: 360px; border-radius: 10px"
+    alt="Thumbnail"
+  />
+</div>
+
+<!-- Modal -->
+<div class="modal-backdrop" id="modal">
+  <div class="modal-content">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="color: #2e425c; font-size: 20px; font-weight: 600;">Иргэний үнэмлэх</div>
+      <button style="margin-bottom: 45px;" class="close-btn" onclick="closeModal()"><i class="fa-solid fa-x"></i></button>
+    </div>
+    <img src="finished.jpg" alt="Full Image" style="width:350px; height: 220px;" />
+    <div>
+      <img src=" https://e-mongolia.mn/static/assets/d08790db244ca2577fed449bebed90e2.svg" alt="Full Image"  style="width:350px; height: 220px;"/>
+      <p style="position: absolute; top: 445px; right: 156px; font-size: 10px;">2019-10-11 00:00</p>
+      <p style="position: absolute; top: 470px; right: 187px; font-size: 10px;">2030/11/03</p>
+      <img src="qr.jpg" style="position: absolute; top: 545px; color: #254A92; right: 295px; height: 55px; width: 55px;"/>
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center; margin-top: 10px;">
+      <div style="border-radius: 50px; width: 146px; height: 39px; border: 1px solid; border-color: #377dff; font-size: 14px; color: #377dff; background-color: #fafafa; display: flex; justify-content: center; align-items: center;  ">Дахин захиалах</div>
+      <div style="border-radius: 50px; width: 146px; height: 39px; border: 1px solid; border-color: #377dff; font-size: 14px; color: #377dff; background-color: #fafafa; display: flex; justify-content: center; align-items: center;  ">Лавлагаа авах</div>
+    </div>
+    
+   
+  </div>
+</div>
+
       </div>
       <div class="ownership">
         <div style="margin-top: 50px">
@@ -436,6 +510,16 @@
         </div>
         <div style="display: flex; justify-content: center ; align-items: center;"><p style="  color: white; font-size: 14px; font-weight: 600;">© Бүх эрх хуулиар хамгаалагдсан 2024 он.</p></div>
         
+        <script>
+            function openModal() {
+    document.getElementById("modal").classList.add("show");
+    document.querySelector(".main").style.display = "none";
+  }
 
+  function closeModal() {
+    document.getElementById("modal").classList.remove("show");
+    document.querySelector(".main").style.display = "block";
+  }
+        </script>
   </body>
 </html>
