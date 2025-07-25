@@ -280,12 +280,29 @@
       <button style="margin-bottom: 45px;" class="close-btn" onclick="closeModal()"><i class="fa-solid fa-x"></i></button>
     </div>
     <img src="finished.jpg" alt="Full Image" style="width:350px; height: 220px;" />
-    <div>
-      <img src=" https://e-mongolia.mn/static/assets/d08790db244ca2577fed449bebed90e2.svg" alt="Full Image"  style="width:350px; height: 220px;"/>
-      <p style="position: absolute; top: 445px; right: 156px; font-size: 10px;">2019-10-11 00:00</p>
-      <p style="position: absolute; top: 470px; right: 187px; font-size: 10px;">2030/11/03</p>
-      <img src="qr.jpg" style="position: absolute; top: 545px; color: #254A92; right: 295px; height: 55px; width: 55px;"/>
+    <div style="position: relative; width: 350px; height: 220px;">
+      <!-- Суурь зураг (relative) -->
+      <img
+        src="https://e-mongolia.mn/static/assets/d08790db244ca2577fed449bebed90e2.svg"
+        alt="Full Image"
+        style="width: 350px; height: 220px; object-fit: cover;"
+      />
+    
+      <!-- Хугацааны текстүүд (absolute) -->
+      <p style="position: absolute; top: 60px; left: 118px; font-size: 10px;">
+        2019-10-11 00:00
+      </p>
+      <p style="position: absolute; top: 85px; left: 118px; font-size: 10px;">
+        2030/11/03
+      </p>
+    
+      <!-- QR код (absolute) -->
+      <img
+        src="qr.jpg"
+        style="position: absolute; top: 162px; left: 3px; width: 55px; height: 55px; color: #254A92;"
+      />
     </div>
+    
 
     <div style="display: flex; flex-direction: column; align-items: center; margin-top: 10px;">
       <div style="border-radius: 50px; width: 146px; height: 39px; border: 1px solid; border-color: #377dff; font-size: 14px; color: #377dff; background-color: #fafafa; display: flex; justify-content: center; align-items: center;  ">Дахин захиалах</div>
